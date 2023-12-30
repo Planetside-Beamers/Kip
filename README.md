@@ -59,7 +59,7 @@ Execute `websocket_service.py` to start listening to the PlanetSide 2 WebSocket 
 - `requirements.txt`: List of project dependencies.
 
 ## Contact
-Email - [Cygnus](mailto:cygnus@cygnusxone.com)
+Email - [Cygnus@cygnusxone.com](mailto:cygnus@cygnusxone.com)
 
 Discord - CygnusXUno
 

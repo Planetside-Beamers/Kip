@@ -17,9 +17,9 @@ def fetch_general_character_data(character_id):
 
 # Example usage function
 def example_usage():
-    character_id = "5428010618020694593"  # Example character ID
+    character_id = "5429091716540847617"  # Example character ID
     character_data = fetch_general_character_data(character_id)
-    
+    print(character_data)
     # Assuming process_character_data is adapted for general character data
     process_character_data(character_data)  
 
