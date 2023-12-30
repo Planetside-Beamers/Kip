@@ -58,13 +58,8 @@ Execute `websocket_service.py` to start listening to the PlanetSide 2 WebSocket 
 - `views/`: (Future Development) Components for the dashboard and overlays.
 - `requirements.txt`: List of project dependencies.
 
-## Contributing
-Contributions to Kip are welcome! Please read `CONTRIBUTING.md` for details on our code of conduct and the process for submitting pull requests.
-
-## License
-This project is licensed under the [LICENSE] - see the LICENSE.md file for details.
-
 ## Contact
 Email - [Cygnus](mailto:cygnus@cygnusxone.com)
+
 Discord - CygnusXUno
 
