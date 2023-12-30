@@ -1,2 +1,2 @@
 # Kip
- A Planetside 2 API 2 for Outfitwars and Streaming
+ A Planetside 2 API tool for Outfitwars and Streaming
