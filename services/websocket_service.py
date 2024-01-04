@@ -49,11 +49,11 @@ def on_open(ws):
     if definition_id:
         subscribe_message["zones"] = [str(combined_zone_id)]
 
-    if characters:
-        subscribe_message["characters"] = characters
+    # if characters:
+    #     subscribe_message["characters"] = characters
 
-    if charactersAndWorld:
-        subscribe_message["logicalAndCharactersWithWorlds"] = "true"
+    # if charactersAndWorld:
+    #     subscribe_message["logicalAndCharactersWithWorlds"] = "true"
 
     ws.send(json.dumps(clear_message))
     ws.send(json.dumps(subscribe_message))

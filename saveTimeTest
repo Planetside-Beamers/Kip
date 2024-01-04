@@ -1,0 +1,43 @@
+import requests
+import time
+from datetime import datetime
+
+API_BASE_URL = "https://census.daybreakgames.com/s:CygnusXAPI/get/ps2:v2"
+
+def fetch_player_loadout(character_id):
+    endpoint = f"{API_BASE_URL}/character"
+    params = params = {
+        "character_id": character_id,
+        "c:resolve": "profile,currency"
+    }
+    try:
+        response = requests.get(endpoint, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error: {e}")
+        return None
+
+def format_elapsed_time(start_time):
+    elapsed_time = datetime.now() - start_time
+    hours, remainder = divmod(elapsed_time.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    return f"{hours:02}:{minutes:02}:{seconds:02}"
+
+def poll_loadout_changes(character_id, interval=60):
+    start_time = datetime.now()
+    last_loadout = None
+
+    while True:
+        data = fetch_player_loadout(character_id)
+        current_loadout = data.get("current_loadout_id") if data else None
+
+        if current_loadout != last_loadout:
+            elapsed = format_elapsed_time(start_time)
+            print(f"Loadout changed to {current_loadout} at {elapsed}")
+            last_loadout = current_loadout
+
+        time.sleep(interval)
+
+character_id = "5429091716540847617"  # Replace with your character ID
+poll_loadout_changes(character_id, interval=30)  # Poll every 30 seconds
